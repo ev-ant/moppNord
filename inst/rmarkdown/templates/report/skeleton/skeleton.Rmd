@@ -1,0 +1,56 @@
+---
+title: "Master thesis's title"
+author: "No 1"
+date: "`r format(Sys.Date(),'%d.%m.%Y')`"
+output:
+  pdf_document:
+    includes:
+      in_header: resource/MOPP.sty
+    latex_engine: xelatex
+documentclass: report
+fontsize: 12pt
+geometry: margin=.5cm, a4paper
+subparagraph: yes
+numbersections: true
+bibliography: library.bib
+toc_depth: 4
+---
+
+```{r , include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = F, error = FALSE)
+```
+<!-- If you want to write your MOPP in English, type on a new line \inEnglish -->
+<!-- \inEnglish -->
+<!-- If you want to have separate lists for figures and tables, type on a new line \FigureTableList -->
+<!-- \FigureTableList -->
+
+
+\partOne
+\input{kappe.tex}
+
+
+<!-- If you switch from Norwegian to English, type in the next line \articleInEcglish -->
+<!-- \articleInEnglish -->
+
+\partTwo
+\input{article.tex}
+
+<!-- \input{article2.tex} -->
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+rmarkdown::render("article.Rmd", clean = T, quiet = T)
+rmarkdown::render("kappe.Rmd", clean = T, quiet = T)
+unlink("article.pdf")
+unlink("kappe.pdf")
+tx  <- readLines("kappe.tex")
+index <- grep("\\\\begin\\{document", tx)
+tx2  <- tx[-c(1:index, length(tx))]
+writeLines(tx2, con = "kappe.tex")
+tx  <- readLines("article.tex")
+index <- grep("\\\\begin\\{document", tx)
+tx2  <- tx[-c(1:index, length(tx))]
+writeLines(tx2, con = "article.tex")
+tx  <- readLines("resource/frontpage.tex")
+writeLines(tx, con = "frontpage.tex")
+rm(tx)
+rm(tx2)
+```

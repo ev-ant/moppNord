@@ -1,0 +1,67 @@
+---
+title: "Master thesis's title"
+author: "No 1"
+date: "`r format(Sys.Date(),'%d.%m.%Y')`"
+output:
+  pdf_document:
+    includes:
+      in_header: resource/MOPP.sty
+    keep_tex: yes
+    latex_engine: xelatex
+documentclass: book
+classoption: openany, oneside
+fontsize: 12pt
+geometry: margin=.5cm, a4paper
+subparagraph: yes
+numbersections: true
+toc_depth: 4
+bibliography: library.bib
+---
+
+```{r , include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = F, error = FALSE)
+```
+<!-- If you want to write your MOPP in English, type on a new line \inEnglish -->
+<!-- \inEnglish -->
+\inEnglish
+<!-- If you will have Appendices, type  "yes" in the next i.e \withAppendices{yes} -->
+\withAppendices{yes}
+
+\MoppTitle
+
+# Sammendrag
+
+\lipsum[3]
+
+# Preface
+
+\lipsum[2]
+
+# Abstract
+\lipsum[2]
+
+\MoppLists
+
+# Intro
+
+| name| text|
+| ------|-----------|
+| sjkdfhvbs|slfjvsdlfkvb|
+
+Table: testing tables
+
+\lipsum[2-20]
+
+\begin{figure}
+\includegraphics{resource/nordlogoen}
+\caption{testin figure}
+\end{figure}
+@Wooldridge2013, @Dougherty2007
+
+<!-- If you have Appendices, type on a new line \Appendices  and create a new chapter with a desired appendix-->
+
+\Appendices
+
+# Title of the first appendix
+
+\MoppRefs

@@ -1,0 +1,17 @@
+\vskip1cm
+\begin{tikzpicture}[remember picture, overlay]
+\fill[fill = nordblue!45!white]  (.5,0) rectangle (19,-24);
+\node[text = white, scale =2, anchor = west] at (1.5,-2)  {\Huge\MainTitle};
+\fill[fill = white] (2,-7) rectangle (20,-16);
+\draw[color = nordgrey!45!black, dotted, very thick] (3,-8.5) -- (18, -8.5);
+\node[anchor = west] at (3,-8) {\large\course\textit{}};
+\node[anchor = west] at (10,-8) {\large\Student\textit{\Author}};
+\node[anchor = west, scale = 2, text width = 7cm, color = nordgrey!60!black] at (3,-11.8) {\Large\Title};
+\draw[color = nordgrey!45!black,  very thick] (3,-14.5) -- (18, -14.5);
+\node[anchor = west] at (3,-15.2) {\large\clocktime\textit{\Date}};
+\node[anchor = west] at (10,-15.2) {\large\totPages\textit{\pageref{LastPage}}};
+\node[anchor = south west] at (2,-27.5) {\logoPic};
+\node[anchor = east, color = nordgrey!80!white] at (17,-27) {\Large\href{www.nord.no}{www.nord.no}};
+\end{tikzpicture}
+\thispagestyle{empty}
+\newgeometry{top=25mm, left=25mm, right=25mm, bottom=25mm}

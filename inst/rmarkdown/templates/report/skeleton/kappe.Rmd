@@ -1,0 +1,31 @@
+---
+title: ""
+output: 
+   pdf_document:
+     keep_tex: yes
+     latex_engine: xelatex
+header-includes: 
+    - \usepackage{fontspec} \setmainfont{Calibri}\usepackage{lipsum}
+fontsize: 12pt
+linespacing: 1.5
+geometry: margin=25mm
+bibliography: library.bib
+---
+
+```{r setup1, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Theory
+
+\lipsum[3-5] 
+
+### CAPM
+
+@Dougherty2007
+
+## Method
+
+\lipsum[3-5]
+
+# References {#ref1}
