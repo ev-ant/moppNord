@@ -3,7 +3,7 @@ Templates for a master thesis at Nord University. Both templates include a title
 ## Installation
 To get access to the templates, run
 
-`devtools::install("ev-ant/moppNord")`
+`devtools::install_github("ev-ant/moppNord")`
 
 It is better to restart **R** in order to see *MOPP - Nord University* and *MOPP_mono - Nord University* in the list of \.Rmd templates.
 
