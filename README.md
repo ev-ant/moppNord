@@ -25,4 +25,6 @@ This template is made for a monography-based master thesis. To get a complete th
 3. Insert your \.bib file with a bibliography for the master thesis into *library.bib*.
 4. Compile the master thesis with the button *Knit*.
 
+More practical notes are given in the template itself - read carefully.
+
 Feedback is welcomed.
