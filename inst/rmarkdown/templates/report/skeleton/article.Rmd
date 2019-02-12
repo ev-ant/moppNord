@@ -1,6 +1,6 @@
 ---
 title: "Master thesis' title"
-name: "Candidate name"
+author: "Author name"
 output: 
    pdf_document:
      keep_tex: yes
