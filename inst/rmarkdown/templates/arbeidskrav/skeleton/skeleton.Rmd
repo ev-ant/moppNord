@@ -1,4 +1,5 @@
 ---
+subtitle: "Mandatory assignment for <course-code>"
 title: "Article's title"
 author: "Author's name"
 date: "`r format(Sys.Date(),'%d.%m.%Y')`"
