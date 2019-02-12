@@ -2,7 +2,7 @@
 title: "Article's title"
 author: "Author's name"
 date: "`r format(Sys.Date(),'%d.%m.%Y')`"
-inntitute: "Nord University Business School"
+institute: "Nord University Business School"
 output: 
    pdf_document:
    template: arbeidskrav.tex
