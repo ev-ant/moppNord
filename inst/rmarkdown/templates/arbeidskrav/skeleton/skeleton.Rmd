@@ -2,27 +2,19 @@
 title: "Article's title"
 author: "Author's name"
 date: "`r format(Sys.Date(),'%d.%m.%Y')`"
+inntitute: "Nord University Business School"
 output: 
    pdf_document:
-     latex_engine: xelatex
    template: arbeidskrav.tex
 bibliography: library.bib
+abstract: |
+      Abstract should be written here
+keywords: "word1, word2, word3"
 ---
 
 ```{r setup2, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, eval = TRUE)
 ```
-
-#### Abstract
-
-\lipsum[1]
-
-
-##### Keywords
-
-word1;
-word2;
-word3
 
 ## Introduction
 
