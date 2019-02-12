@@ -13,6 +13,9 @@ This template is made for an article-based master thesis. To get a complete thes
 1. Edit *<your_file_name>.Rmd*, opened first (with the name you have specified), by fill in the **title** for your thesis and your **candidate number**.
 2. In the *kappe.Rmd* you have to write your introductory part for the thesis. This document can be rendered also separately.
 3. In the *article.Rmd* you have to write your article. You can also render an article separately.
+
+    * **OBS** If you want to use article separately, do not forget to fill in title and author fields in the header.
+    
 4. Insert your \.bib file with a bibliography for the master thesis into *library.bib*.
 
 To get the master thesis that includes both parts, run the command `moppNord::create_mopp("<your_file_name>.Rmd")`.
