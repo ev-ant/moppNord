@@ -1,0 +1,35 @@
+---
+subtitle: "Mandatory assignment for <course-code>"
+title: "Article's title"
+author: "Author's name"
+date: "`r format(Sys.Date(),'%d.%m.%Y')`"
+output: pdf_document
+linestretch: 1.5
+fontsize: 12pt
+bibliography: library.bib
+abstract: |
+      Abstract should be written here
+---
+
+```{r setup2, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE)
+```
+**Keywords: ** word1; word2; word3
+
+## Introduction
+
+
+## Data
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+@Wooldridge2013
+
+
+# References
