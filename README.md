@@ -1,5 +1,5 @@
 # moppNord
-Templates for a master thesis at Nord University. Both templates include a title page and formatted to comply with official requirements.
+Templates for a master thesis and other mandatory assignments at Nord University. Both templates for MOPP include a title page and formatted to comply with official requirements.
 ## Installation
 To get access to the templates, run
 
