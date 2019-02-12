@@ -3,23 +3,20 @@ subtitle: "Mandatory assignment for <course-code>"
 title: "Article's title"
 author: "Author's name"
 date: "`r format(Sys.Date(),'%d.%m.%Y')`"
-institute: "Nord University Business School"
-output: 
-   pdf_document:
-   template: arbeidskrav.tex
+output: pdf_document
+linestretch: 1.5
+fontsize: 12pt
 bibliography: library.bib
 abstract: |
       Abstract should be written here
-keywords: "word1, word2, word3"
 ---
 
 ```{r setup2, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, eval = TRUE)
 ```
+**Keywords: ** word1; word2; word3
 
 ## Introduction
-
-\lipsum[3-8]
 
 
 ## Data
