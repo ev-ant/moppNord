@@ -44,9 +44,9 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = F, error = FALSE)
 
 # Intro
 
-| name| text|
-| ------|-----------|
-| sjkdfhvbs|slfjvsdlfkvb|
+| name        | text                                         |
+| ------------|----------------------------------------------|
+| Random text | The reasonable desription of the first column|
 
 Table: testing tables
 
