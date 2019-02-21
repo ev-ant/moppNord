@@ -53,7 +53,7 @@ Table: testing tables
 \lipsum[2-20]
 
 \begin{figure}
-\includegraphics{resource/nordlogoen}
+\includegraphics{resources/nordlogoen}
 \caption{testin figure}
 \end{figure}
 @Wooldridge2013, @Dougherty2007
