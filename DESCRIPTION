@@ -3,7 +3,7 @@ Title: Rmd templates for a master thesis
 Version: 0.0.0.9001
 Authors@R: person("Eve", "Antoniuk", email = "ev.ant@outlook.com", role = c("aut", "cre"))
 Description: The package includes Rmd templates for writing master thesis at Nord Unviversity Business School
-Depends: R (>= 3.5.0)
+Depends: R (>= 3.4.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
