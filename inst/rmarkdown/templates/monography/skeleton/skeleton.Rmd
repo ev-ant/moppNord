@@ -5,7 +5,7 @@ date: "`r format(Sys.Date(),'%d.%m.%Y')`"
 output:
   pdf_document:
     includes:
-      in_header: resource/MOPP.sty
+      in_header: resources/MOPP.sty
     keep_tex: yes
     latex_engine: xelatex
 documentclass: book
