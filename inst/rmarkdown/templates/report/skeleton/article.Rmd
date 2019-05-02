@@ -10,6 +10,7 @@ header-includes:
 fontsize: 12pt
 linespacing: 1.5
 geometry: margin=25mm
+csl: resource/harvard.csl
 bibliography: library.bib
 ---
 
