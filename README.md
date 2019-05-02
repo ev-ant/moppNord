@@ -18,6 +18,8 @@ This template is made for an article-based master thesis. To get a complete thes
     
 4. Insert your \.bib file with a bibliography for the master thesis into *library.bib*.
 
+Notice, that if your introductory part is in English, you do not need to have `lang: nb` in YAML.
+
 To get the master thesis that includes both parts, run the command `moppNord::create_mopp("<your_file_name>.Rmd")`.
 
 ## Template *MOPP_mono - Nord University*
