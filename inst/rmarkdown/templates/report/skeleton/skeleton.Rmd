@@ -12,8 +12,9 @@ fontsize: 12pt
 geometry: margin=.5cm, a4paper
 subparagraph: yes
 numbersections: true
-bibliography: library.bib
 toc_depth: 4
+csl: resource/harvard.csl
+bibliography: library.bib
 ---
 
 ```{r , include=FALSE}
