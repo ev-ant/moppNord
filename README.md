@@ -30,4 +30,6 @@ This template is made for a monography-based master thesis. To get a complete th
 
 More practical notes are given in the template itself - read carefully.
 
+**OBS**: Use **only** RMarkdown-friendly citation!
+
 Feedback is welcomed.
