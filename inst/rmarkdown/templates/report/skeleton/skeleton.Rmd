@@ -20,6 +20,7 @@ bibliography: library.bib
 ```{r , include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = F, error = FALSE)
 ```
+\Course{CODE}
 <!-- If you want to write your MOPP in English, type on a new line \inEnglish -->
 <!-- \inEnglish -->
 <!-- If you want to have separate lists for figures and tables, type on a new line \FigureTableList -->
