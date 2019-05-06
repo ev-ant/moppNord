@@ -28,7 +28,8 @@
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
 \renewcommand\theparagraph{}
 \renewcommand\thesubparagraph{}
-
+\renewcommand\thetable{\arabic{chapter}.\arabic{table}}
+\renewcommand\thefigure{\arabic{chapter}.\arabic{figure}}
 
 \usepackage{titlesec}
 \titleformat{\chapter}[hang]
@@ -127,13 +128,13 @@
    \pagenumbering{arabic}
     \setcounter{page}{1}
     \onehalfspace
-    \section{\chOne}
+    \chapter{\chOne}
 }
 
 \def\partTwo{
   \newpage
 
-  \section{\chTwo}
+  \chapter{\chTwo}
   \vskip1cm
   {\centering{\Large\MakeUppercase\Title}\par
   \textit{\large\Candit \Author}\par
