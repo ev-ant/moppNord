@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = F, error = FALSE)
 ```
 \Course{CODE}
 <!-- If you want to write your MOPP in English, type on a new line \inEnglish -->
-<!-- \inEnglish -->
+\inEnglish
 <!-- If you want to have separate lists for figures and tables, type on a new line \FigureTableList -->
 <!-- \FigureTableList -->
 
@@ -38,21 +38,15 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = F, error = FALSE)
 \input{article.tex}
 
 <!-- \input{article2.tex} -->
-```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
-rmarkdown::render("article.Rmd", clean = T, quiet = T)
-rmarkdown::render("kappe.Rmd", clean = T, quiet = T)
-unlink("article.pdf")
-unlink("kappe.pdf")
-tx  <- readLines("kappe.tex")
-index <- grep("\\\\begin\\{document", tx)
-tx2  <- tx[-c(1:index, length(tx))]
-writeLines(tx2, con = "kappe.tex")
-tx  <- readLines("article.tex")
-index <- grep("\\\\begin\\{document", tx)
-tx2  <- tx[-c(1:index, length(tx))]
-writeLines(tx2, con = "article.tex")
-tx  <- readLines("resource/frontpage.tex")
-writeLines(tx, con = "frontpage.tex")
-rm(tx)
-rm(tx2)
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE, results='hide'}
+rmarkdown::render("article.Rmd", clean = T, quiet = T, output_format = rmarkdown::latex_document())
+rmarkdown::render("kappe.Rmd", clean = T, quiet = T, output_format = rmarkdown::latex_document())
+lapply(c("kappe.tex", "article.tex"), function(doc){
+  tx  = readLines(doc)
+  index = grep("\\\\begin\\{document", tx)
+  tx2  = tx[-c(1:index, length(tx))]
+  writeLines(tx2, con = doc)
+  return()
+})
+writeLines(readLines("resource/frontpage.tex"), con = "frontpage.tex")
 ```
