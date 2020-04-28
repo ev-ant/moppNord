@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = F, error = FALSE)
 ```
 \Course{CODE}
 <!-- If you want to write your MOPP in English, type on a new line \inEnglish -->
-\inEnglish
+<!-- \inEnglish -->
 <!-- If you want to have separate lists for figures and tables, type on a new line \FigureTableList -->
 <!-- \FigureTableList -->
 
@@ -44,7 +44,7 @@ rmarkdown::render("kappe.Rmd", clean = T, quiet = T, output_format = rmarkdown::
 lapply(c("kappe.tex", "article.tex"), function(doc){
   tx  = readLines(doc)
   index = grep("\\\\begin\\{document", tx)
-  tx2  = tx[-c(1:index, length(tx))]
+  tx2  = tx[-c(0:index+1, length(tx))]
   writeLines(tx2, con = doc)
   return()
 })
