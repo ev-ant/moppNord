@@ -18,6 +18,7 @@ toc_depth: 4
 csl: resources/harvard.csl
 lang: nb
 bibliography: library.bib
+biblatexoptions: [style=authoryear,natbib=true, backend=bibtex]
 ---
 
 ```{r , include=FALSE}
