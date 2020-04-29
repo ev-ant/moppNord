@@ -52,13 +52,14 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = F, error = FALSE)
 | ------------|----------------------------------------------|
 | Random text | The reasonable desription of the first column|
 
-Table: testing tables
+Table: Testing tables
 
+## Another section
 \lipsum[2-20]
 
 \begin{figure}
 \includegraphics{resources/nordlogoen}
-\caption{testin figure}
+\caption{Testing figure}
 \end{figure}
 @Wooldridge2013, @Dougherty2007
 
