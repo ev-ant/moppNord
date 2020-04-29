@@ -15,7 +15,7 @@ geometry: margin=.5cm, a4paper
 subparagraph: yes
 numbersections: true
 toc_depth: 4
-csl: resource/harvard.csl
+csl: resources/harvard.csl
 lang: nb
 bibliography: library.bib
 ---
