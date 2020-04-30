@@ -21,6 +21,7 @@ This template is made for an article-based master thesis. To get a complete thes
 Notice, that if your introductory part is in English, you do not need to have `lang: nb` in YAML.
 
 To get the master thesis that includes both parts, run the command `moppNord::create_mopp("<your_file_name>.Rmd")`.
+      If your working directory is not the one as *<your_file_name>*, you need to use the full path to the *<your_file_name>.Rmd*
 
 ## Template *MOPP_mono - Nord University*
 This template is made for a monography-based master thesis. To get a complete thesis:
