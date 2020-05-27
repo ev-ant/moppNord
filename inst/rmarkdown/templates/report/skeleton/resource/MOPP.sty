@@ -31,24 +31,27 @@
 \renewcommand\thesubsection{\arabic{subsection}}
 % \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
-\renewcommand\theparagraph{}
+\renewcommand\theparagraph{\thesubsubsection.\arabic{paragraph}}
 \renewcommand\thesubparagraph{}
 \renewcommand\thetable{\arabic{chapter}.\arabic{table}}
 \renewcommand\thefigure{\arabic{chapter}.\arabic{figure}}
+\renewcommand\theequation{\arabic{chapter}.\arabic{equation}}
+
 
 \usepackage{titlesec}
 \titleformat{\chapter}[hang]
 {\normalfont\Large\bfseries}{\thechapter}{1em}{}
 \titlespacing*{\chapter} {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 
-\titleformat{\paragraph}[display]
+\titleformat{\subparagraph}[display]
 {\normalfont\bfseries\fillast}
-{{\theparagraph}}
+{{\thesubparagraph}}
 {1ex minus .1ex}
 {\small}
 \titlespacing{\subsubsection}
-{3pc}{*3}{*2}[3pc]
-
+{0pc}{*3}{*2}[3pc]
+\titlespacing{\paragraph}
+{0pc}{*3}{*2}[3pc]
 % \def\startAbstract{\begingroup
 % \leftskip4em
 % \rightskip\leftskip\itshape}
@@ -58,11 +61,10 @@
   % \let\Author\@author
 % \let\Date\@date
 % \makeatother
-
-\AtBeginDocument{\let\maketitle\relax%\def\title#1{\gdef\@title{#1}\gdef\Title{#1}}
+\AtBeginDocument{\let\maketitle\relax %\def\title{\gdef\@title}
 }
 % \AtEndPreamble{
-% \makeatletter\let\Title\@title\makeatother
+%\makeatletter\let\Title\@title\makeatother
 % \makeatletter\let\Author\@author\makeatother
 % \makeatletter\let\Date\@date\makeatother}
 
@@ -134,6 +136,7 @@
   \input{frontpage}
     \pagenumbering{roman}
       \setcounter{page}{1}
+      \setcounter{tocdepth}{3}
   \tableofcontents
       \addcontentsline{toc}{section}{\contentsname}
     \extraToToc
@@ -146,9 +149,9 @@
 \def\partTwo{
   \newpage
   \chapter{\chTwo}
-  \vspace{1cm}
-  {\centering{\Large\MakeUppercase{\thetitle}}\par
-  \textit{\large\Candit \theauthor}\par
+  %\vspace{1cm}
+  {\centering \Large\MakeUppercase{\Title}\par
+  \textit{\large\Candit\ \theauthor}\par
   {\School}\par}
 %   \includegraphics[page=1,trim = {25mm 25mm 25mm 75mm}, clip, width=\textwidth]{article}%};}
 % \includepdf[page=2-,pagecommand={\thispagestyle{plain}},trim = {25mm 25mm 25mm 25mm}, clip, width=0.99\textwidth]{article}%\label{lPage}
