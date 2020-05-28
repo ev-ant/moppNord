@@ -12,7 +12,7 @@ fontsize: 12pt
 geometry: margin=.5cm, a4paper
 subparagraph: yes
 numbersections: true
-toc_depth: 4
+
 csl: resource/harvard.csl
 bibliography: library.bib
 ---
@@ -32,7 +32,7 @@ knitr::knit_hooks$set(plot = knitr::hook_plot_tex)
 \input{kappe.tex}
 
 
-<!-- If you switch from Norwegian to English, type in the next line \articleInEcglish -->
+<!-- If you switch from Norwegian to English, type in the next line \articleInEnglish -->
 <!-- \articleInEnglish -->
 
 \partTwo
