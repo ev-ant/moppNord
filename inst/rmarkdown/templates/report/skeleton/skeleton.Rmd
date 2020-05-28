@@ -27,6 +27,22 @@ knitr::knit_hooks$set(plot = knitr::hook_plot_tex)
 <!-- If you want to have separate lists for figures and tables, type on a new line \FigureTableList -->
 <!-- \FigureTableList -->
 
+\input{frontpage}
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+
+# Abstract
+
+*You should write abstract in English* (even if you are writting mopp in Norwegian)
+
+
+# Sammendraget
+
+*You should also write an abstract in Norwegian*(even if you are writting mopp in English) - both should be included
+
+
+# Acknowledgments
 
 \partOne
 \input{kappe.tex}
