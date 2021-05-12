@@ -2,6 +2,35 @@ opts = knitr:::new_defaults(list(config = list()))
 pandoc2.0 <- function() {
   rmarkdown::pandoc_available("2.0")
 }
+is_img_line = function(x) grepl('^<img src=".* alt="', x)
+
+
+# remove HTML tags and remove extra spaces
+strip_html = function(x) {
+  x = gsub('<!--.*?-->', '', x)  # remove comments
+  x = gsub('<[^>]+>', '', x)
+  x = gsub('\\s{2,}', ' ', x)
+  x
+}
+i18n = function(group, key, dict = list()) {
+  labels = load_config()[['language']][[group]]
+  if (is.null(labels[[key]])) dict[[key]] else labels[[key]]
+}
+# given a label, e.g. fig:foo, figure out the appropriate prefix
+label_prefix = function(type, dict = label_names, sep = '') {
+  label = i18n('label', type, dict)
+  supported_type = c('fig', 'tab', 'eq')
+  if (is.function(label)) {
+    if (type %in% supported_type) return(label)
+    msg = knitr::combine_words(supported_type, before = "'")
+    stop("Using a label function is only supported for elements of types ", msg)
+  }
+  function(num = NULL) {
+    if (is.null(num)) return(label)
+    paste0(label, num, sep)
+  }
+}
+
 lua_filter = function (filters = NULL) {
   rmarkdown::pkg_file_lua(filters, package = 'bookdown')
 }
@@ -86,10 +115,10 @@ write_utf8 <- function(text, con, ...) {
   writeLines(enc2utf8(text), con, ..., useBytes = TRUE)
 }
 load_config = function() {
-  if (length(opts$get('config')) == 0 && file.exists('_bookdown.yml')) {
-    # store the book config
-    opts$set(config = rmarkdown:::yaml_load_file('_bookdown.yml'))
-  }
+  #if (length(opts$get('config')) == 0 && file.exists('_bookdown.yml')) {
+  #  # store the book config
+  #  opts$set(config = rmarkdown:::yaml_load_file('_bookdown.yml'))
+  #}
   opts$get('config')
 }
 common_format_config = function(
@@ -140,4 +169,13 @@ bookdown_yml_arg = function(config = load_config(), path = tempfile()) {
   if (!rmarkdown::pandoc_available('2.3') || length(config) == 0) return()
   yaml::write_yaml(list(bookdown = config), path)
   c("--metadata-file", rmarkdown::pandoc_path_arg(path))
+}
+get_base_format = function(format, options = list()) {
+  if (is.character(format)) format = eval(parse(text = format))
+  if (!is.function(format)) stop('The output format must be a function')
+  # make sure named elements in `options` have corresponding named arguments in
+  # the format function, unless the function has the ... argument
+  nms = names(formals(format))
+  if (!('...' %in% nms)) options = options[names(options) %in% c(nms, '')]
+  do.call(format, options)
 }
