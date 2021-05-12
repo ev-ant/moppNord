@@ -88,6 +88,7 @@ mono_mopp = function(
   config = common_format_config(config, 'latex')
   config
 }
+opts = knitr:::new_defaults(list(config = list()))
 
 resolve_refs_latex = function(x) {
   # equation references \eqref{}
