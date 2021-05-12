@@ -1,3 +1,4 @@
+opts = knitr:::new_defaults(list(config = list()))
 pandoc2.0 <- function() {
   rmarkdown::pandoc_available("2.0")
 }
