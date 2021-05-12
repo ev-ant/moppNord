@@ -412,6 +412,7 @@ r_chap_pattern = '^<!--chapter:end:(.+)-->$'
 pandoc_args2 = function(args) {
   if (pandoc2.0() && !length(grep('--wrap', args))) c('--wrap', 'preserve', args) else args
 }
+label_names = list(fig = 'Figure ', tab = 'Table ', eq = 'Equation ')
 
 theorem_abbr = c(
   theorem = 'thm', lemma = 'lem', corollary = 'cor', proposition = 'prp', conjecture = 'cnj',
