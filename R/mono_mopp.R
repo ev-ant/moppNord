@@ -89,7 +89,9 @@ mono_mopp = function(
   config
 }
 opts = knitr:::new_defaults(list(config = list()))
-
+pandoc2.0 <- function() {
+  rmarkdown::pandoc_available("2.0")
+}
 resolve_refs_latex = function(x) {
   # equation references \eqref{}
   x = gsub(
