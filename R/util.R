@@ -91,7 +91,7 @@ restore_ref_links = function(x, regexp, tags, txts, alt = TRUE) {
   x
 }
 all_math_env = c(names(theorem_abbr), names(label_names_math2))
-pkg_file <- function(..., package = "thesisNord", mustWork = FALSE) {
+pkg_file <- function(..., package = "moppNord", mustWork = FALSE) {
   if (is.null(devtools_meta(package))) {
     system.file(..., package = package, mustWork = mustWork)
   } else {
