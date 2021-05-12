@@ -1,3 +1,6 @@
+pandoc2.0 <- function() {
+  pandoc_available("2.0")
+}
 pkg_file <- function(..., package = "thesisNord", mustWork = FALSE) {
   if (is.null(devtools_meta(package))) {
     system.file(..., package = package, mustWork = mustWork)
