@@ -1,4 +1,4 @@
-mono_mopp <- rmarkdwon::pdf_document(toc = TRUE,
+mono_mopp <- rmarkdown::pdf_document(toc = TRUE,
                          toc_depth = 4,
                          number_sections = TRUE,
                          fig_width = 6.5,
