@@ -1,4 +1,4 @@
-pdf_document <- function(toc = TRUE,
+mono_mopp <- function(toc = TRUE,
                          toc_depth = 4,
                          number_sections = TRUE,
                          fig_width = 6.5,
