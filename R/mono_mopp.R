@@ -1,4 +1,4 @@
-mono_mopp <- rmarkdown::pdf_document(toc = TRUE,
+mono_mopp <- function(){rmarkdown::pdf_document(toc = TRUE,
                          toc_depth = 4,
                          number_sections = TRUE,
                          fig_width = 6.5,
@@ -16,7 +16,7 @@ mono_mopp <- rmarkdown::pdf_document(toc = TRUE,
                          md_extensions = NULL,
                          output_extensions = NULL,
                          pandoc_args = NULL,
-                         extra_dependencies = NULL)
+                         extra_dependencies = NULL)}
 pkg_file <- function(..., package = "moppNord", mustWork = FALSE) {
   if (is.null(devtools_meta(package))) {
     system.file(..., package = package, mustWork = mustWork)
