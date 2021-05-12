@@ -122,3 +122,71 @@ mono_mopp <- function(toc = TRUE,
     intermediates_generator = intermediates_generator
   )
 }
+
+general_intermediates_generator <- function(
+  saved_files_dir, original_input, intermediates_dir
+) {
+
+  # copy all intermediates (pandoc will need to bundle them in the PDF)
+  intermediates <- copy_render_intermediates(original_input, intermediates_dir, FALSE)
+
+  # we need figures from the supporting files dir to be available during
+  # render as well; if we have a files directory, copy its contents
+  if (!is.null(saved_files_dir) && dir_exists(saved_files_dir)) {
+    file.copy(saved_files_dir, intermediates_dir, recursive = TRUE)
+    intermediates <- c(intermediates, list.files(
+      path = file.path(intermediates_dir, basename(saved_files_dir)),
+      all.files = TRUE, recursive = TRUE, full.names = TRUE))
+  }
+
+  intermediates
+}
+
+patch_tex_output <- function(file) {
+  x <- read_utf8(file)
+  if (length(i <- which(x == '\\begin{document}')) == 0) return()
+  if (length(i <- grep('^\\\\date\\{', head(x, i[1]))) == 0) return()
+
+  i <- i[1]
+  # add \author{} if missing: https://github.com/jgm/pandoc/pull/5961
+  if (length(grep('^\\\\author\\{', head(x, i))) == 0) {
+    x <- append(x, '\\author{}', i - 1)
+    i <- i + 1
+  }
+  # reduce the vertical spacing in \date{} if no author is given
+  if (any(head(x, i) == '\\author{}')) {
+    x[i] <- paste0('\\date{\\vspace{-2.5em}', sub('^\\\\date\\{', '', x[i]))
+  }
+  write_utf8(x, file)
+}
+
+# patch output from Pandoc < 2.8: https://github.com/jgm/pandoc/issues/5801
+fix_horiz_rule <- function(file) {
+  if (pandoc_available('2.8')) return()
+  x <- read_utf8(file)
+  i <- x == '\\begin{center}\\rule{0.5\\linewidth}{\\linethickness}\\end{center}'
+  if (any(i)) {
+    x[i] <- '\\begin{center}\\rule{0.5\\linewidth}{0.5pt}\\end{center}'
+    write_utf8(x, file)
+  }
+}
+
+process_header_includes <- function(x) {
+  x <- unlist(x[["header-includes"]])
+  gsub('(^|\n)\\s*```\\{=latex\\}\n(.+?\n)```\\s*(\n|$)', '\\1\\2\\3', x)
+}
+
+citation_package_arg <- function(value) {
+  value <- value[1]
+  if (value == "none") {
+    warning("citation_package = 'none' was deprecated; please use 'default' instead.")
+    value <- "default"
+  }
+  value <- match.arg(value, c("default", "natbib", "biblatex"))
+  if (value != "default") paste0("--", value)
+}
+
+default_geometry <- function(meta_names, pandoc_args = NULL) {
+  !any(c('geometry', 'documentclass') %in% meta_names) &&
+    length(grep('^(--(variable|metadata)=)?documentclass:', pandoc_args)) == 0
+}
