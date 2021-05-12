@@ -28,7 +28,7 @@
 #'   black-and-white (grayscale).
 #' @note This output format can only be used with \code{\link{render_book}()}.
 #' @export
-mono_mopp = function(
+mopp = function(
   pandoc_args = NULL, ..., number_sections=TRUE,
   base_format = rmarkdown::pdf_document, toc_unnumbered = TRUE,
   toc_appendix = TRUE, toc_bib = TRUE, quote_footer = NULL, highlight_bw = FALSE,
