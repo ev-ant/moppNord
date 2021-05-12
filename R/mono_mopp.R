@@ -39,9 +39,9 @@ mono_mopp <- function(toc = TRUE,
     args <- c(args, "--number-sections")
 
   # highlighting
-  if (!is.null(highlight))
-    highlight <- match.arg(highlight, highlighters())
-  args <- c(args, pandoc_highlight_args(highlight))
+ # if (!is.null(highlight))
+ #   highlight <- match.arg(highlight, highlighters())
+ # args <- c(args, pandoc_highlight_args(highlight))
 
   # latex engine
   latex_engine <- match.arg(latex_engine, c("pdflatex", "lualatex", "xelatex", "tectonic"))
