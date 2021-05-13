@@ -49,3 +49,9 @@ If there will be no appendix, remove everything after the code chunk above
 
 
 # Title of the first appendix
+
+
+
+```{=latex}
+\MyRefs
+```
