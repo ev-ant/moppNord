@@ -315,7 +315,7 @@ article_mopp <- function(toc = TRUE,
       args = args,
       latex_engine = latex_engine,
       keep_tex = keep_tex,
-      lua_filters = pkg_file_lua(c("pagebreak.lua", "latex-div.lua"))
+      lua_filters = pkg_file_lua(c("pagebreak.lua", "latex-div.lua", "multiple-bibliographies.lua"))
     ),
     clean_supporting = !keep_tex,
     keep_md = keep_md,
