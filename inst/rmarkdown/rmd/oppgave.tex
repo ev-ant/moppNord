@@ -184,7 +184,6 @@ $endfor$
 \fancyhead[R]{}
 }
 
-\renewcommand\thechapter{}
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
@@ -212,7 +211,7 @@ $endfor$
 \addappheadtotoc\renewcommand\thesection{\Alph{section}}$endif$}
 
 \def\MyRefs{ \newpage
-  \section{\Litname} }
+  \section*{\Litname} }
 
 
 $preamble$
@@ -222,7 +221,7 @@ $preamble$
 
 \vskip1cm
 \begin{tikzpicture}[remember picture, overlay]
-\fill[fill = nordblue!45!white]  (-1.5,2) rectangle (16.5,-22);
+\fill[fill = nordblue]  (-1.5,2) rectangle (16.5,-22);
 \node[text = white, scale =2, anchor = west] at (0,0)  {\Huge\MainTitle};
 \fill[fill = white] (.5,-5) rectangle (18,-14);
 \draw[color = nordgrey!45!black, dotted, very thick] (1,-6.5) -- (16, -6.5);
@@ -243,7 +242,7 @@ $if(toc)$
 \tableofcontents
    %   \addcontentsline{toc}{chapter}{\contentsname}
 $endif$
-
+\newpage
 \pagestyle{main}
 \onehalfspace
 
