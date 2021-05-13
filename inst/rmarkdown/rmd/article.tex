@@ -217,8 +217,7 @@ $endfor$
 \def\MyRefs{ \newpage
   \backmatter
   \chapter{\Litname} 
-  \putbib
-  \end{bibunit}}
+ }
   
 \def\articleInEnglish{
 \renewcommand{\LitName}{References}
@@ -230,26 +229,27 @@ $endfor$
 }
 
 \def\partTwo{
-\putbib
-\end{bibunit}
 \clearpage
-\part*{\chapTwo\label{article}}
-\begin{bibunit}[apalike]
+\textcolor{nordblue!50!black}{\chapter*{\chapTwo\label{article}}}
+    \addcontentsline{toc}{chapter}{\textcolor{nordblue!50!black}{\chapTwo}}%\newpage
+\vskip2cm
 {\centering
-\vskip1cm
+	\vskip1cm
     {\Large$if(article-title)$ $article-title$ $else$ $title$ $endif$}\par
-    {\textit{\School}\par
+    \textit{\School}\par
+}
     \vskip1cm
-    \begin{addmargin}[1cm]{1cm}
-        \singlespacing\itshape
-        $article-abstract$\par
+    \leftskip=1cm
+    \rightskip=1cm
+     {       \singlespacing\itshape
+        $article-abstract$ \par
         $if(keywords)$ 
-          \textbf{Keywords:} $keywords$
-         $endif$
-    \end{addmargin}
+          \textbf{Keywords:} $keywords$\par
+         $endif$}
+         \leftskip=0pt\rightskip=0pt
+
 \vskip1cm}
-}
-}
+
 
 $preamble$
 
@@ -299,14 +299,14 @@ $endif$
 
 \newpage
 \tableofcontents
-      \addcontentsline{toc}{chapter}{\contentsname}
 
 \end{frontmatter}
 \mainmatter\pagestyle{main}
 \onehalfspace
 
-\part*{\chapOne\label{kappa}}
-\begin{bibunit}
+\textcolor{nordblue!50!black}{\chapter*{\chapOne\label{kappa}}}
+    \addcontentsline{toc}{chapter}{\textcolor{nordblue!50!black}{\chapOne}}%\newpage
+\vskip2cm
 
 $body$
 
