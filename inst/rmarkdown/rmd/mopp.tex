@@ -209,7 +209,7 @@ $endfor$
 \definecolor{nordgrey}{RGB}{148, 183, 187}
 
 \def\Appendices{$if(appendices)$\newpage\appendix\chapter*{\appendixtocname\label{app}}
-\addappheadtotoc\renewcommand\thechapter{\Alph{chapter}}$endif$}
+\addappheadtotoc\renewcommand\setthesection{\Alph{section}}$endif$}
 
 
 
