@@ -1,32 +1,4 @@
-mono_mopp <- function(){rmarkdown::pdf_document(toc = TRUE,
-                         toc_depth = 4,
-                         number_sections = TRUE,
-                         fig_width = 6.5,
-                         fig_height = 4.5,
-                         fig_crop = 'auto',
-                         fig_caption = TRUE,
-                         dev = 'pdf',
-                         df_print = "default",
-                         highlight = "default",
-                         template = pkg_file("rmd/mopp.tex"),
-                         keep_tex = FALSE,
-                         keep_md = FALSE,
-                         latex_engine = "xelatex",
-                         includes = NULL,
-                         md_extensions = NULL,
-                         output_extensions = NULL,
-                         pandoc_args = NULL,
-                         extra_dependencies = NULL)}
-pkg_file <- function(..., package = "moppNord", mustWork = FALSE) {
-  if (is.null(devtools_meta(package))) {
-    system.file(..., package = package, mustWork = mustWork)
-  } else {
-    # used only if package has been loaded with devtools or pkgload
-    file.path(getNamespaceInfo(package, "path"), "inst", ...)
-  }
-}
-
-mono_mopp2 <- function(toc = TRUE,
+mono_mopp <- function(toc = TRUE,
                          toc_depth = 4,
                          number_sections = TRUE,
                          fig_width = 6.5,
@@ -158,6 +130,7 @@ as_tmpfile <- function(str) {
   write_utf8(str, f)
   f
 }
+
 general_intermediates_generator <- function(
   saved_files_dir, original_input, intermediates_dir
 ) {
