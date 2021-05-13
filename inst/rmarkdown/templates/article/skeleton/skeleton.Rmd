@@ -1,0 +1,70 @@
+---
+title: "Master thesis's title"
+author: "No 1"
+date: "`r format(Sys.Date(),'%d.%m.%Y')`"
+output: moppNord::article_mopp
+bibliography: library.bib
+lists: true
+appendices: true
+sammendrag: |
+    abstract in Norwegian
+abstract: |
+    abstract in English
+preface: |
+   acknowledgements
+article-title: "Title for the article"
+keywords: "key1, key2"
+article-abstract: |
+    separate abstract for the article
+---
+
+<!-- If you want to write your MOPP in Norwegian, you should add `lang: nb` above -->
+
+
+# Intro
+
+\lipsum[4] [@Wooldridge2013]
+
+| Col1  | Col 2      |
+| ------|------------|
+| name  | description|
+
+Table: testing tables
+
+```{r}
+knitr::kable(summary(cars), caption = "Testing Tables, alternative 2")
+```
+
+
+<!-- Here start the second part of the thesis - the scientific article. If your thesis before was in Norwegian, but you want to write the article in English, remove % in the next code chunk -->
+
+```{=latex}
+\partTwo
+%\articleInEnglish
+```
+
+
+\lipsum[2-20]
+
+\begin{figure}
+\includegraphics{nordlogono}
+\caption{testin figure}
+\end{figure}
+
+@Wooldridge2013, @Dougherty2007
+
+
+```{=latex}
+\Appendices
+```
+
+<!-- If you have Appendices, create a new chapter with a desired appendix.-->
+If there will be no appendix, remove everything after the code chunk above
+
+
+# Title of the first appendix
+
+```{=latex}
+\MyRefs
+```
+
