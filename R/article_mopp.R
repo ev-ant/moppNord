@@ -53,7 +53,7 @@ article_mopp <- function(toc = TRUE,
 
   # content includes
   args <- c(args, includes_to_pandoc_args(includes))
-
+  args <- c(args, "--lua-filter=multiple-bibliographies.lua")
   # make sure the graphics package is always loaded
   if (identical(template, "default")) args <- c(args, "--variable", "graphics")
 
@@ -114,7 +114,7 @@ article_mopp <- function(toc = TRUE,
       args = args,
       latex_engine = latex_engine,
       keep_tex = keep_tex,
-      lua_filters = pkg_file_lua(c("pagebreak.lua", "latex-div.lua", "multiple-bibliographies.lua"))
+      lua_filters = pkg_file_lua(c("pagebreak.lua", "latex-div.lua"))
     ),
     clean_supporting = !keep_tex,
     keep_md = keep_md,
