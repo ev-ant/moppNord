@@ -43,9 +43,6 @@ $endif$
 \usepackage[margin=2.5cm, a4paper]{geometry}
 \usepackage[]{natbib}
  \bibliographystyle{apalike}
-\usepackage{bibunits}
-\defaultbibliographystyle{apalike}
-\defaultbibliography{$bibliography$}
 \usepackage{appendix}
 $if(listings)$
 \usepackage{listings}
@@ -220,16 +217,18 @@ $endfor$
  }
   
 \def\articleInEnglish{
-\renewcommand{\LitName}{References}
+\renewcommand{\Litname}{References}
 \renewcommand{\figurename}{Figure}
 \renewcommand{\tablename}{Table}
 \renewcommand{\equationautorefname}{Equation}
 \renewcommand{\Candit}{Candidate}
 \renewcommand{\School}{Nord University Business School}
 }
+\def\kappaRefs{\chapter*{\Litname{\label{lit-kappa}}}}
+
 
 \def\partTwo{
-\clearpage
+\newpage
 \textcolor{nordblue!50!black}{\chapter*{\chapTwo\label{article}}}
     \addcontentsline{toc}{chapter}{\textcolor{nordblue!50!black}{\chapTwo}}%\newpage
 \vskip2cm
@@ -309,12 +308,6 @@ $endif$
 \vskip2cm
 
 $body$
-
-
-  \newpage
-  \backmatter
-  \chapter{\Litname}
-\bibliography{library.bib}
 
 
 $for(include-after)$
