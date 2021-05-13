@@ -2,9 +2,7 @@
 title: "Master thesis's title"
 author: "No 1"
 date: "`r format(Sys.Date(),'%d.%m.%Y')`"
-output: 
-    moppNord::article_mopp:
-      keep_md: true
+output: moppNord::article_mopp
 bibliography_chapter1: [chapter1.bib]
 bibliography_chapter2: [chapter2.bib]
 lists: true
