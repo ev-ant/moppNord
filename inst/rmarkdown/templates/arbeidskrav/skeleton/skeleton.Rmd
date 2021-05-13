@@ -1,35 +1,51 @@
 ---
-subtitle: "Mandatory assignment for <course-code>"
-title: "Article's title"
-author: "Author's name"
+title: "Work's title"
+author: "No 1"
 date: "`r format(Sys.Date(),'%d.%m.%Y')`"
-output: pdf_document
-linestretch: 1.5
-fontsize: 12pt
-bibliography: library.bib
-abstract: |
-      Abstract should be written here
+output: 
+    moppNord::assign_nord:
+      toc: false
+bibliography: [library.bib]
 ---
 
-```{r setup2, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, eval = TRUE)
+<!-- If you want to write your assignment in Norwegian, you should add `lang: nb` above -->
+<!-- If you need to have a table of content, change `toc: false` to `toc: true` -->
+
+
+# Intro
+
+[@Wooldridge2013] \lipsum[4]
+
+
+
+| Col1  | Col 2      |
+| ------|------------|
+| name  | description|
+
+Table: testing tables
+
+```{r}
+knitr::kable(summary(cars), caption = "Testing Tables, alternative 2")
 ```
-**Keywords: ** word1; word2; word3
-
-## Introduction
 
 
-## Data
+# Method
+\lipsum[2-20]
 
-You can also embed plots, for example:
+# Data
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+\begin{figure}
+\centering
+\includegraphics{nordlogono}
+\caption{testin figure}
+\end{figure}
+
+@Wooldridge2013, @Dougherty2007
+
+
+
+
+```{=latex}
+% Do not delete this
+\MyRefs
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-@Wooldridge2013
-
-
-# References
