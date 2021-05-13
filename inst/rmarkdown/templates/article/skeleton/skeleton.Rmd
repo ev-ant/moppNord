@@ -3,12 +3,9 @@ title: "Master thesis's title"
 author: "No 1"
 course: "FIN0000"
 date: "`r format(Sys.Date(),'%d.%m.%Y')`"
-output: 
-    moppNord::article_mopp:
-      keep_tex: true
+output: moppNord::article_mopp
 bibliography_chapter1: [chapter1.bib]
 bibliography_chapter2: [chapter2.bib]
-lang: nb
 lists: true 
 appendices: true
 sammendrag: |
