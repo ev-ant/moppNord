@@ -109,8 +109,7 @@ $if(lang)$
 \renewcommand{\contentsname}{Innholdsfortegnelse}
 \renewcommand{\listtablename}{Oversikt over tabeller}
 \renewcommand{\listfigurename}{Oversikt over figurer}
-\write18{wget https://www.nord.no/Style Library/Images/nordlogono.jpg}
-\def\logoPic{\includegraphics[trim={5mm 10mm 5mm 7mm}, clip, height = 1.7cm]{nordlogono.jpg}}
+\def\logoPic{\includegraphics[height = 1.7cm]{nordlogono}}
 \def\Litname{Litteraturliste}
 \def\akn{Forord}
 \renewcommand{\figurename}{Figur}
@@ -130,7 +129,6 @@ $else$
 \def\contentsname{Table of contents}
 \def\listtablename{List of tables}
 \def\listfigurename{List of figures}
-\write18{wget https://www.nord.no/Style Library/Images/nordlogoen.jpg}
 \def\logoPic{\includegraphics[height = 1.65cm]{nordlogoen}}
 \def\Litname{References}
 \def\figurename{Figure}
