@@ -1,74 +1,58 @@
 ---
 title: "Master thesis's title"
 author: "No 1"
+course: "FIN0000"
 date: "`r format(Sys.Date(),'%d.%m.%Y')`"
-output:
-  pdf_document:
-    includes:
-      in_header: resources/MOPP.sty
-    keep_tex: yes
-    latex_engine: xelatex
-documentclass: book
-classoption: openany, oneside
-fontsize: 12pt
-geometry: margin=.5cm, a4paper
-subparagraph: yes
-numbersections: true
-toc_depth: 4
-csl: resources/harvard.csl
-lang: nb
+output: moppNord::mono_mopp
 bibliography: library.bib
-biblatexoptions: [style=authoryear,natbib=true, backend=bibtex]
+lists: true
+appendices: true
+sammendrag: |
+    abstract in Norwegian
+abstract: |
+    abstract in English
+preface: |
+   acknowledgements
 ---
 
-```{r , include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = F, error = FALSE)
-knitr::knit_hooks$set(plot = knitr::hook_plot_tex)
-```
-\Course{CODE}
-<!-- If you want to write your MOPP in English, type on a new line \inEnglish -->
-<!-- \inEnglish -->
-\inEnglish
+<!-- If you want to write your MOPP in Norwegian, you should add `lang: nb` above -->
 
-<!-- If you will have Appendices, type  "yes" in the next i.e \withAppendices{yes} -->
-\withAppendices{yes}
-
-\MoppTitle
-
-# Sammendrag
-
-\lipsum[3]
-
-# Preface
-
-\lipsum[2]
-
-# Abstract
-\lipsum[2]
-
-\MoppLists
 
 # Intro
 
-| name        | text                                         |
-| ------------|----------------------------------------------|
-| Random text | The reasonable desription of the first column|
+| Col1  | Col 2      |
+| ------|------------|
+| name  | description|
 
-Table: Testing tables
+Table: testing tables
 
-## Another section
+```{r}
+knitr::kable(summary(cars), caption = "Testing Tables, alternative 2")
+```
+
+
 \lipsum[2-20]
 
 \begin{figure}
-\includegraphics{resources/nordlogoen}
-\caption{Testing figure}
+\includegraphics{nordlogono}
+\caption{testin figure}
 \end{figure}
+
 @Wooldridge2013, @Dougherty2007
 
-<!-- If you have Appendices, type on a new line \Appendices  and create a new chapter with a desired appendix-->
 
+```{=latex}
 \Appendices
+```
+
+<!-- If you have Appendices, create a new chapter with a desired appendix.-->
+If there will be no appendix, remove everything after the code chunk above
+
 
 # Title of the first appendix
 
-\MoppRefs
+
+
+```{=latex}
+\MyRefs
+```
