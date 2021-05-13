@@ -114,7 +114,7 @@ article_mopp <- function(toc = TRUE,
       args = args,
       latex_engine = latex_engine,
       keep_tex = keep_tex,
-      lua_filters = c(pkg_file_lua(c("pagebreak.lua", "latex-div.lua")), paste0(find.package("moppNord")[1],"rmarkdown/lua/multiple-bibliographies.lua"))
+      lua_filters = c(pkg_file_lua(c("pagebreak.lua", "latex-div.lua")), paste0(find.package("moppNord")[1],"/rmarkdown/lua/multiple-bibliographies.lua"))
     ),
     clean_supporting = !keep_tex,
     keep_md = keep_md,
