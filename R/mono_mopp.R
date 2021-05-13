@@ -48,8 +48,9 @@ mono_mopp2 <- function(toc = TRUE,
                          extra_dependencies = NULL) {
 
   # base pandoc options for all PDF output
-  args <- c("--self-contained")
-  args <-c(args, "--shell-escape")
+  args <-c("--shell-escape")
+
+  args <- c(args, "--self-contained")
   # table of contents
   args <- c(args, pandoc_toc_args(toc, toc_depth))
 
