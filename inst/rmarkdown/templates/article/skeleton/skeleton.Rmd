@@ -2,10 +2,13 @@
 title: "Master thesis's title"
 author: "No 1"
 date: "`r format(Sys.Date(),'%d.%m.%Y')`"
-output: moppNord::article_mopp
+output: 
+    moppNord::article_mopp:
+      keep_tex: true
 bibliography_chapter1: [chapter1.bib]
 bibliography_chapter2: [chapter2.bib]
-lists: true
+lang: nb
+lists: true 
 appendices: true
 sammendrag: |
     abstract in Norwegian
@@ -48,19 +51,32 @@ knitr::kable(summary(cars), caption = "Testing Tables, alternative 2")
 
 ```{=latex}
 \partTwo
-%\articleInEnglish
+\articleInEnglish
 ```
 
 
+# Introduction
 \lipsum[2-20]
 
+# Data
+
 \begin{figure}
+\centering
 \includegraphics{nordlogono}
 \caption{testin figure}
 \end{figure}
 
 @Wooldridge2013, @Dougherty2007
 
+
+
+```{=latex}
+% Do not delete this
+\MyRefs
+```
+
+::: {#refs_chapter2}
+:::
 
 ```{=latex}
 \Appendices
@@ -74,12 +90,3 @@ If there will be no appendix, remove everything after the code chunk above
 
 Here comes your appendix text and visuals.
 
-
-
-```{=latex}
-% Do not delete this
-\MyRefs
-```
-
-::: {#refs_chapter2}
-:::
