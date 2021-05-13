@@ -83,7 +83,25 @@ validate_latex_dependency <- function(list) {
     stop("name (package name) for latex_dependency not provided", call. = FALSE)
   list
 }
+# check if the passed knit_meta has any (e.g. html/latex) dependencies
+has_dependencies <- function(knit_meta, class) {
 
+  if (inherits(knit_meta, class))
+    return(TRUE)
+
+  if (is.list(knit_meta)) {
+    for (dep in knit_meta) {
+      if (is.null(names(dep))) {
+        if (has_dependencies(dep, class))
+          return(TRUE)
+      } else {
+        if (inherits(dep, class))
+          return(TRUE)
+      }
+    }
+  }
+  FALSE
+}
 # check if the passed knit_meta has any latex dependencies
 has_latex_dependencies <- function(knit_meta) {
   has_dependencies(knit_meta, "latex_dependency")
