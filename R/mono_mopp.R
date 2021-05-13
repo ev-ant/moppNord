@@ -63,7 +63,7 @@ mono_mopp2 <- function(toc = TRUE,
   }
 
   # numbered sections
-  if (number_sections)
+  #if (number_sections)
     args <- c(args, "--number-sections")
 
   # highlighting
