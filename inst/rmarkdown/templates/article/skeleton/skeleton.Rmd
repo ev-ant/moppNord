@@ -2,8 +2,11 @@
 title: "Master thesis's title"
 author: "No 1"
 date: "`r format(Sys.Date(),'%d.%m.%Y')`"
-output: moppNord::article_mopp
-bibliography: library.bib
+output: 
+    moppNord::article_mopp:
+      keep_md: true
+bibliography_chapter1: [chapter1.bib]
+bibliography_chapter2: [chapter2.bib]
 lists: true
 appendices: true
 sammendrag: |
@@ -23,7 +26,7 @@ article-abstract: |
 
 # Intro
 
-\lipsum[4] [@Wooldridge2013]
+\lipsum[4] @Wooldridge2013,
 
 | Col1  | Col 2      |
 | ------|------------|
@@ -37,6 +40,13 @@ knitr::kable(summary(cars), caption = "Testing Tables, alternative 2")
 
 
 <!-- Here start the second part of the thesis - the scientific article. If your thesis before was in Norwegian, but you want to write the article in English, remove % in the next code chunk -->
+
+```{=latex}
+\kappaRefs
+```
+
+::: {#refs_chapter1}
+:::
 
 ```{=latex}
 \partTwo
@@ -64,7 +74,14 @@ If there will be no appendix, remove everything after the code chunk above
 
 # Title of the first appendix
 
+Here comes your appendix text and visuals.
+
+
+
 ```{=latex}
+% Do not delete this
 \MyRefs
 ```
 
+::: {#refs_chapter2}
+:::
