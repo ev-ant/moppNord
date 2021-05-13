@@ -32,7 +32,7 @@ mopp = function(
   pandoc_args = NULL, ..., number_sections=TRUE,
   base_format = rmarkdown::pdf_document, toc_unnumbered = TRUE,
   toc_appendix = TRUE, toc_bib = TRUE, quote_footer = NULL, highlight_bw = FALSE,
-  template = pkg_file("rmd/mopp.tex")
+  template = paste0(find.package("moppNord"), "/rmarkdown/rmd/mopp.tex")
 ) {
   config = get_base_format(base_format, list(
     toc_depth = 4, subparagraph = TRUE, template=template,
