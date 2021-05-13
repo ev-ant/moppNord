@@ -1,4 +1,4 @@
-\documentclass[$layout$, openany, oneside, 12pt]{book} %review=doublespace preprint=single 5p=2 column
+\documentclass[$layout$, oneside,openany, 12pt]{book} %review=doublespace preprint=single 5p=2 column
 %%% Begin My package additions %%%%%%%%%%%%%%%%%%%
 \usepackage[hyphens]{url}
 \usepackage{lipsum}
@@ -190,12 +190,19 @@ $endfor$
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
 \renewcommand\theparagraph{}
 \renewcommand\thesubparagraph{}
+\renewcommand\thetable{\arabic{table}}
+\renewcommand\thefigure{\arabic{figure}}
 
 
 \usepackage{tocloft,titlesec}
 \titleformat{\chapter}[hang]
 {\normalfont\Large\bfseries}{\thechapter}{1em}{}
 \titlespacing*{\chapter} {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\renewcommand\cftloftitlefont{\Large\bfseries}
+\renewcommand\cftlottitlefont{\Large\bfseries}
+\renewcommand\cfttoctitlefont{\Large\bfseries}
+
 
 \titleformat{\paragraph}[display]
 {\normalfont\bfseries\fillast}
@@ -208,12 +215,12 @@ $endfor$
 \definecolor{nordblue}{RGB}{0, 176, 185}
 \definecolor{nordgrey}{RGB}{148, 183, 187}
 
-\def\Appendices{$if(appendices)$\newpage\appendix\chapter*{\appendixtocname\label{app}}
+\def\Appendices{$if(appendices)$\newpage 
+\appendix\chapter*{\appendixtocname\label{app}}
 \addappheadtotoc\renewcommand\thesection{\Alph{section}}$endif$}
 
 \def\MyRefs{ \newpage
-  \backmatter
-  \chapter{\Litname} 
+  \chapter{\Litname{\label{lit-article}}} 
  }
   
 \def\articleInEnglish{
@@ -224,11 +231,13 @@ $endfor$
 \renewcommand{\Candit}{Candidate}
 \renewcommand{\School}{Nord University Business School}
 }
-\def\kappaRefs{\chapter*{\Litname{\label{lit-kappa}}}}
+\def\kappaRefs{\chapter{\Litname{\label{lit-kappa}}}}
 
-
+\renewcommand*\mainmatter{%
+  \if@twoside\cleardoubleoddpage\fi
+  \@mainmattertrue\pagenumbering{arabic}%
+}
 \def\partTwo{
-\newpage
 \textcolor{nordblue!50!black}{\chapter*{\chapTwo\label{article}}}
     \addcontentsline{toc}{chapter}{\textcolor{nordblue!50!black}{\chapTwo}}%\newpage
 \vskip2cm
@@ -248,12 +257,13 @@ $endfor$
          \leftskip=0pt\rightskip=0pt
 
 \vskip1cm}
+\let\cleardoublepage=\par
 
 
 $preamble$
 
 \begin{document}
-\begin{frontmatter}
+\begin{titlepage}
 
 \vskip1cm
 \begin{tikzpicture}[remember picture, overlay]
@@ -271,7 +281,10 @@ $preamble$
 \node[anchor = east, color = nordgrey!80!white] at (15.5,-25) {\Large\href{www.nord.no}{www.nord.no}};
 \end{tikzpicture}
 \thispagestyle{empty}
+\end{titlepage}
 \newpage
+\renewcommand{\thepage}{\roman{page}}
+\setcounter{page}{1}
 
 $if(sammendrag)$
   \chapter{Sammendrag}
@@ -291,18 +304,18 @@ $endif$
 
 $if(lists)$
   \newpage\listoffigures
-    \addcontentsline{toc}{chapter}{\listfigurename}%\newpage
+    \addcontentsline{toc}{chapter}{\hspace{.55cm}\listfigurename}%\newpage
   \listoftables
-    \addcontentsline{toc}{chapter}{\listtablename}
+    \addcontentsline{toc}{chapter}{\hspace{.55cm}\listtablename}
 $endif$
 
 \newpage
 \tableofcontents
 
-\end{frontmatter}
-\mainmatter\pagestyle{main}
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
+\pagestyle{main}
 \onehalfspace
-
 \textcolor{nordblue!50!black}{\chapter*{\chapOne\label{kappa}}}
     \addcontentsline{toc}{chapter}{\textcolor{nordblue!50!black}{\chapOne}}%\newpage
 \vskip2cm
