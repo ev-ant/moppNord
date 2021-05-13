@@ -48,7 +48,7 @@ mono_mopp2 <- function(toc = TRUE,
                          extra_dependencies = NULL) {
 
   # base pandoc options for all PDF output
-  args <-c("--tex-option=--shell-escape")
+  args <-c("--xelatex-engine-opt=-shell-escape")
 
   args <- c(args, "--self-contained")
   # table of contents
