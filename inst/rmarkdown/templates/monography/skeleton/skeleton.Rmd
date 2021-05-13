@@ -2,7 +2,7 @@
 title: "Master thesis's title"
 author: "No 1"
 date: "`r format(Sys.Date(),'%d.%m.%Y')`"
-output: thesisNord::mono_mopp()
+output: moppNord::mono_mopp()
 bibliography: library.bib
 lists: true
 appendices: true
@@ -33,7 +33,7 @@ knitr::kable(summary(cars), caption = "Testing Tables, alternative 2")
 \lipsum[2-20]
 
 \begin{figure}
-\includegraphics{resource/nordlogoen}
+\includegraphics{nordlogono}
 \caption{testin figure}
 \end{figure}
 
