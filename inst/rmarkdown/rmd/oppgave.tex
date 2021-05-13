@@ -208,11 +208,11 @@ $endfor$
 \definecolor{nordblue}{RGB}{22, 92, 125}
 \definecolor{nordgrey}{RGB}{148, 183, 187}
 
-\def\Appendices{$if(appendices)$\newpage\appendix\chapter*{\appendixtocname\label{app}}
+\def\Appendices{$if(appendices)$\newpage\appendix\section*{\appendixtocname\label{app}}
 \addappheadtotoc\renewcommand\thesection{\Alph{section}}$endif$}
 
 \def\MyRefs{ \newpage
-  \chapter{\Litname} }
+  \section{\Litname} }
 
 
 $preamble$
