@@ -59,7 +59,7 @@ mono_mopp2 <- function(toc = TRUE,
 
   # template path and assets
   if (!is.null(template) && !identical(template, "default")) {
-    args <- c(args, "--template", pandoc_path_arg(pkg_file("rmd/mopp.tex")))
+    args <- c(args, "--template", pandoc_path_arg(template))
   }
 
   # numbered sections
