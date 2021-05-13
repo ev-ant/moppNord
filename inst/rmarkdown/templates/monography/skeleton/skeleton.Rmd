@@ -1,8 +1,9 @@
 ---
 title: "Master thesis's title"
 author: "No 1"
+course: "FIN0000"
 date: "`r format(Sys.Date(),'%d.%m.%Y')`"
-output: moppNord::mono_mopp()
+output: moppNord::mono_mopp
 bibliography: library.bib
 lists: true
 appendices: true
