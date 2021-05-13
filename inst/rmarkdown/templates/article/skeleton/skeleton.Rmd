@@ -1,6 +1,7 @@
 ---
 title: "Master thesis's title"
 author: "No 1"
+course: "FIN0000"
 date: "`r format(Sys.Date(),'%d.%m.%Y')`"
 output: 
     moppNord::article_mopp:
