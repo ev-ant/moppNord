@@ -209,8 +209,11 @@ $endfor$
 \definecolor{nordgrey}{RGB}{148, 183, 187}
 
 \def\Appendices{$if(appendices)$\newpage\appendix\chapter*{\appendixtocname\label{app}}
-\addappheadtotoc\renewcommand\setthesection{\Alph{section}}$endif$}
+\addappheadtotoc\renewcommand\thesection{\Alph{section}}$endif$}
 
+\def\MyRefs{ \newpage
+  \backmatter
+  \chapter{\Litname} }
 
 
 $preamble$
