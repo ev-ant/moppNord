@@ -7,6 +7,9 @@ To get access to the templates, you need to have library `devtools` installed. T
 
 It is better to restart **R** in order to see *Monography MOPP*, *Article-based MOPP*, and *Assignment at Nord* in the list of \.Rmd templates.
 
+### For user of MacOS
+These templates rely on Calibri font that is native for the Windows. To install Calibri font on MacOS, follow [this instructures from Apple StackExchange](https://apple.stackexchange.com/questions/128091/where-can-i-find-default-microsoft-fonts-calibri-cambria) (use the first answer).
+
 ## Shared structure
 When chosing a template and setting its name, you will get a folder with chosen name that contains three types of files:
 
